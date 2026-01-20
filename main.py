@@ -27,6 +27,7 @@ if __name__ == "__main__":
     for d in datas:
       # print(d["id"])
       # print(d["fields"]["source_database"][0])
+      os.system(f"mkdir {d["id"]}")
       for taxon in taxonomy_of_interest:
         print(f"Search for familly {d["id"]} from {d["fields"]["source_database"][0]} and taxon {taxon}")
         output_uniprot_ids(f"https://www.ebi.ac.uk:443/interpro/api/protein/UniProt/entry/{d["fields"]["source_database"][0]}/{d["id"]}/taxonomy/uniprot/{taxon}",
